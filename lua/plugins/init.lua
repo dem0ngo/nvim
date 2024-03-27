@@ -1,11 +1,11 @@
 return {
-  {
-    "stevearc/conform.nvim",
-    -- event = 'BufWritePre' -- uncomment for format on save
-    config = function()
-      require "configs.conform"
-    end,
-  },
+  -- { I added this later in the file
+  --   "stevearc/conform.nvim",
+  --   -- event = 'BufWritePre' -- uncomment for format on save
+  --   config = function()
+  --     require "configs.conform"
+  --   end,
+  -- },
 
   -- These are some examples, uncomment them if you want to see them work!
   {
@@ -24,7 +24,7 @@ return {
         "stylua",
         "html-lsp",
         "css-lsp",
-        "prettier",
+        "black",
         "marksman",
         "pyright",
         "mdformat",
@@ -156,6 +156,7 @@ return {
     "stevearc/conform.nvim",
     opts = {
       notify_on_error = false,
+      event = 'BufWritePre', -- This is supposedly supposed to make it format on save unlike the below function
       format_on_save = function(bufnr)
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
@@ -168,7 +169,7 @@ return {
       end,
       formatters_by_ft = {
         lua = { "stylua" },
-        python = { "prettier" },
+        python = { "black" },
         markdown = { "mdformat" },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
