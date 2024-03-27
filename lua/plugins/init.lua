@@ -285,6 +285,7 @@ return {
       }
     end,
   },
+
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -294,4 +295,10 @@ return {
     end,
     ft = { "markdown" },
   },
+
+  -- { -- I couldn't get this to work but I barely tried
+  --   "stevearc/oil.nvim",
+  --   opts = {},
+  --   dependencies = {"nvim-tree/nvim-web-devicons"},
+  -- },
 }
